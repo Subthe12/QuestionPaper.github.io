@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 6 Mathematics — 50 MCQ Mock Examination</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Arial,Helvetica,sans-serif;background:#d5dfed;color:#1d2940}.header{margin:20px;padding:22px 24px;text-align:center;color:white;background:#294b9b;border-radius:30px;box-shadow:0 5px 14px rgba(0,0,0,.12)}.header h1{margin:0 0 8px;font-size:clamp(25px,4vw,38px)}.header p{margin:5px 0;font-size:16px}.layout{width:min(1200px,94%);margin:auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:24px;align-items:start;padding-bottom:30px}.sidebar{position:sticky;top:15px;background:white;border-radius:18px;padding:20px;box-shadow:0 4px 12px rgba(0,0,0,.1)}.sidebar h3{margin-top:0}.progress{height:9px;background:#e6e9ef;border-radius:10px;overflow:hidden;margin:10px 0 18px}.progressBar{height:100%;width:0;background:#294b9b;transition:width .25s}.section-link{display:block;width:100%;padding:10px;margin:7px 0;border:0;border-radius:9px;background:#eef1f7;color:#263655;text-align:left;cursor:pointer;font-weight:bold}.section-link:hover,.section-link.active{background:#dbe5ff}.exam{background:white;border-radius:20px;padding:clamp(20px,4vw,40px);box-shadow:0 4px 12px rgba(0,0,0,.1)}.exam-title{text-align:center;border-bottom:2px solid #e1e5ec;padding-bottom:18px;margin-bottom:24px}.exam-title h2{margin:0 0 8px;color:#294b9b}.meta{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 22px;font-size:15px}.instructions{background:#f5f7fb;border-left:5px solid #294b9b;border-radius:10px;padding:16px 20px;margin-bottom:28px}.instructions h3{margin-top:0}.instructions li{margin:8px 0}.section{margin:32px 0;scroll-margin-top:20px}.section h2{color:#17213a;border-bottom:2px solid #dfe4ec;padding-bottom:10px}.question{padding:18px 0;border-bottom:1px solid #e8ebf0}.question-text{font-weight:bold;line-height:1.55;margin-bottom:12px}.options{display:grid;gap:9px}.option{display:flex;align-items:flex-start;gap:10px;padding:11px 13px;border:2px solid #e1e4ea;border-radius:9px;cursor:pointer;transition:.15s}.option:hover{background:#f5f7fb;border-color:#b8c4dc}.option:has(input:checked){background:#e7efff;border-color:#294b9b}input[type=radio]{margin-top:3px}.case-box{background:#f8f9fc;border-radius:12px;padding:15px;margin-bottom:12px;line-height:1.6}.top-start{text-align:center;margin:20px 0}.start-action{background:#1565c0;min-width:140px;font-size:17px}.exam-hidden{display:none!important}.timer{position:fixed;right:20px;bottom:20px;z-index:20;background:#ffeb3b;color:#222;padding:10px 16px;border-radius:22px;font-weight:bold;box-shadow:0 4px 12px rgba(0,0,0,.18)}.timer.warning{background:#ff9800;color:white}.timer.danger{background:#d32f2f;color:white}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}button.action{border:0;border-radius:9px;padding:12px 18px;cursor:pointer;color:white;font-weight:bold;font-size:15px}#submitBtn{background:#294b9b}#saveBtn{background:#388e3c}#resetBtn{background:#757575}#reviewBtn{background:#7b1fa2}.result{display:none;margin-top:25px;padding:20px;border-radius:14px;background:#eef7ee;border:2px solid #9ccc9c}.result h3{margin-top:0}.review{display:none;margin-top:20px}.review-card{padding:16px;margin:12px 0;border-radius:12px;border-left:6px solid}.review-card.incorrect{background:#fff0f0;border-color:#d32f2f}.review-card.skipped{background:#fff8e6;border-color:#f57c00}.review-card.correct{background:#eff9f0;border-color:#388e3c}.review-card h4{margin:0 0 8px}.review-card p{margin:6px 0;line-height:1.5}.score-big{font-size:32px;font-weight:800;color:#294b9b}.footer{text-align:center;color:#60708c;padding:10px 0 30px}@media(max-width:850px){.layout{grid-template-columns:1fr}.sidebar{position:static}.timer{right:10px;bottom:10px}.section-link{display:inline-block;width:auto;margin-right:5px}}
+</style>
+</head>
+<body>
+<div class="header"><h1>Class 6 Mathematics</h1><p>50-MCQ Mock Examination</p><p>Mathematics • Grade 6 • Maximum Marks: 50 • Time: 1 Hour 30 Minutes</p></div>
+<div class="top-start"><button class="action start-action" id="startBtn" type="button">Start</button></div><div class="layout exam-hidden" id="examLayout">
+<aside class="sidebar">
+<h3>Exam Progress</h3><div class="progress"><div class="progressBar" id="progressBar"></div></div><p id="progressText">0 / 50 answered</p>
+<button class="section-link active" onclick="goTo('secA')">Section A — 1–10</button>
+<button class="section-link" onclick="goTo('secB')">Section B — 11–20</button>
+<button class="section-link" onclick="goTo('secC')">Section C — 21–30</button>
+<button class="section-link" onclick="goTo('secD')">Section D — 31–40</button>
+<button class="section-link" onclick="goTo('secE')">Section E — 41–50</button>
+<p><strong>All 50 questions are MCQs.</strong></p><p>There are no written-answer questions.</p>
+</aside>
+<main class="exam">
+<div class="exam-title"><h2>Class 6 Mathematics Mock Examination Paper</h2><div class="meta"><span><strong>Questions:</strong> 50</span><span><strong>Marks:</strong> 50</span><span><strong>Time:</strong> 1 Hour 30 Minutes</span></div></div>
+<div class="instructions"><h3>General Instructions</h3><ol><li>This question paper contains 50 Multiple Choice Questions.</li><li>Each question carries 1 mark.</li><li>All questions are compulsory.</li><li>Select one option for each question.</li><li>Calculators are not permitted.</li><li>Choose the best answer for each question.</li><li>After submission, use <strong>Know what you made wrong</strong> to see incorrect and skipped questions with explanations.</li></ol></div>
+<form id="examForm">
+<section class="section" id="secA"><h2>Section A — Number System & Operations</h2>
+<div id="questionsA"></div></section>
+<section class="section" id="secB"><h2>Section B — Factors, Multiples & Integers</h2><div id="questionsB"></div></section>
+<section class="section" id="secC"><h2>Section C — Fractions & Decimals</h2><div id="questionsC"></div></section>
+<section class="section" id="secD"><h2>Section D — Geometry, Mensuration & Data Handling</h2><div id="questionsD"></div></section>
+<section class="section" id="secE"><h2>Section E — Algebra, Ratio & Mixed Practice</h2><div id="questionsE"></div></section>
+</form>
+<div class="actions"><button type="button" class="action" id="saveBtn">Save Progress</button><button type="button" class="action" id="resetBtn">Reset Answers</button><button type="button" class="action" id="submitBtn">Submit Examination</button></div>
+<div class="result" id="result"><h3>Examination Result</h3><div class="score-big" id="scoreText"></div><p id="resultDetails"></p><p id="totalTime" style="font-size:18px;font-weight:bold;color:#294b9b;margin-top:12px;">Total Time Taken: 00:00:00</p><button type="button" class="action" id="reviewBtn">Know what you made wrong</button></div>
+<div class="review" id="reviewSection"><h3>Question Review</h3><p>Incorrect questions and skipped questions are shown below. Correct questions are not listed.</p><div id="reviewContent"></div></div>
+</main></div><div class="timer" id="timer">00:00:00</div><div class="footer">Class 6 Mathematics • 50 MCQs • Interactive Mock Examination</div>
+<script>
+const questions = [
+  {
+    "q": "The smallest whole number is:",
+    "o": [
+      "0",
+      "1",
+      "-1",
+      "10"
+    ],
+    "a": 0,
+    "e": "Whole numbers start from 0 and continue as 1, 2, 3, and so on."
+  },
+  {
+    "q": "What is the place value of 7 in 57,342?",
+    "o": [
+      "7",
+      "70",
+      "700",
+      "7,000"
+    ],
+    "a": 3,
+    "e": "In 57,342, the digit 7 is in the thousands place, so its place value is 7,000."
+  },
+  {
+    "q": "The successor of 99,999 is:",
+    "o": [
+      "99,998",
+      "100,000",
+      "100,001",
+      "99,000"
+    ],
+    "a": 1,
+    "e": "The successor of a number is obtained by adding 1. So 99,999 + 1 = 100,000."
+  },
+  {
+    "q": "What is 456 + 789?",
+    "o": [
+      "1,145",
+      "1,245",
+      "1,255",
+      "1,345"
+    ],
+    "a": 1,
+    "e": "456 + 789 = 1,245."
+  },
+  {
+    "q": "What is 9,000 − 3,765?",
+    "o": [
+      "5,135",
+      "5,235",
+      "5,335",
+      "6,235"
+    ],
+    "a": 1,
+    "e": "9,000 − 3,765 = 5,235."
+  },
+  {
+    "q": "What is 24 × 15?",
+    "o": [
+      "240",
+      "320",
+      "360",
+      "420"
+    ],
+    "a": 2,
+    "e": "24 × 15 = 24 × (10 + 5) = 240 + 120 = 360."
+  },
+  {
+    "q": "What is 864 ÷ 12?",
+    "o": [
+      "62",
+      "72",
+      "82",
+      "92"
+    ],
+    "a": 1,
+    "e": "12 × 72 = 864, so 864 ÷ 12 = 72."
+  },
+  {
+    "q": "The greatest 5-digit number is:",
+    "o": [
+      "90,000",
+      "99,000",
+      "99,999",
+      "100,000"
+    ],
+    "a": 2,
+    "e": "The greatest 5-digit number is 99,999."
+  },
+  {
+    "q": "398 + 602 is approximately:",
+    "o": [
+      "100",
+      "500",
+      "1,000",
+      "10,000"
+    ],
+    "a": 2,
+    "e": "398 is close to 400 and 602 is close to 600. Their sum is about 1,000."
+  },
+  {
+    "q": "1 lakh is equal to:",
+    "o": [
+      "10,000",
+      "1,00,000",
+      "10,00,000",
+      "1,000"
+    ],
+    "a": 1,
+    "e": "In the Indian place-value system, 1 lakh = 1,00,000."
+  },
+  {
+    "q": "Which of the following is a factor of 36?",
+    "o": [
+      "5",
+      "6",
+      "7",
+      "11"
+    ],
+    "a": 1,
+    "e": "36 ÷ 6 = 6, so 6 is a factor of 36."
+  },
+  {
+    "q": "Which of the following is a prime number?",
+    "o": [
+      "21",
+      "27",
+      "29",
+      "35"
+    ],
+    "a": 2,
+    "e": "29 has exactly two factors: 1 and 29, so it is prime."
+  },
+  {
+    "q": "The LCM of 4 and 6 is:",
+    "o": [
+      "8",
+      "10",
+      "12",
+      "24"
+    ],
+    "a": 2,
+    "e": "Multiples of 4 are 4, 8, 12... and multiples of 6 are 6, 12... The least common multiple is 12."
+  },
+  {
+    "q": "The HCF of 18 and 24 is:",
+    "o": [
+      "3",
+      "6",
+      "9",
+      "12"
+    ],
+    "a": 1,
+    "e": "The common factors are 1, 2, 3 and 6. The highest is 6."
+  },
+  {
+    "q": "The first positive multiple of 7 is:",
+    "o": [
+      "0",
+      "1",
+      "7",
+      "14"
+    ],
+    "a": 2,
+    "e": "Positive multiples of 7 begin 7, 14, 21, ..."
+  },
+  {
+    "q": "Which of these is an even integer?",
+    "o": [
+      "-5",
+      "-3",
+      "-4",
+      "7"
+    ],
+    "a": 2,
+    "e": "An even integer is divisible by 2. -4 is divisible by 2."
+  },
+  {
+    "q": "What is -3 + 7?",
+    "o": [
+      "-10",
+      "-4",
+      "4",
+      "10"
+    ],
+    "a": 2,
+    "e": "Starting at -3 and moving 7 units to the right gives 4."
+  },
+  {
+    "q": "What is 5 − 9?",
+    "o": [
+      "4",
+      "-4",
+      "14",
+      "-14"
+    ],
+    "a": 1,
+    "e": "5 − 9 = -4."
+  },
+  {
+    "q": "Which number is greater?",
+    "o": [
+      "-5",
+      "-2",
+      "Both are equal",
+      "Cannot be compared"
+    ],
+    "a": 1,
+    "e": "On the number line, -2 lies to the right of -5, so -2 is greater."
+  },
+  {
+    "q": "The additive identity for integers is:",
+    "o": [
+      "1",
+      "-1",
+      "0",
+      "10"
+    ],
+    "a": 2,
+    "e": "Adding 0 to any integer leaves it unchanged, so 0 is the additive identity."
+  },
+  {
+    "q": "What is 1/2 + 1/4?",
+    "o": [
+      "1/6",
+      "2/4",
+      "3/4",
+      "3/8"
+    ],
+    "a": 2,
+    "e": "1/2 = 2/4, so 2/4 + 1/4 = 3/4."
+  },
+  {
+    "q": "What is 3/5 of 20?",
+    "o": [
+      "8",
+      "10",
+      "12",
+      "15"
+    ],
+    "a": 2,
+    "e": "3/5 × 20 = 3 × 4 = 12."
+  },
+  {
+    "q": "Which fraction is equivalent to 2/3?",
+    "o": [
+      "3/4",
+      "4/6",
+      "5/8",
+      "6/8"
+    ],
+    "a": 1,
+    "e": "Multiplying numerator and denominator of 2/3 by 2 gives 4/6."
+  },
+  {
+    "q": "Which is greater?",
+    "o": [
+      "1/2",
+      "5/8",
+      "They are equal",
+      "1/4"
+    ],
+    "a": 1,
+    "e": "1/2 = 4/8, and 5/8 is greater than 4/8."
+  },
+  {
+    "q": "The decimal form of 7/10 is:",
+    "o": [
+      "0.07",
+      "0.7",
+      "7.0",
+      "70"
+    ],
+    "a": 1,
+    "e": "Seven tenths is written as 0.7."
+  },
+  {
+    "q": "What is 2.5 + 1.75?",
+    "o": [
+      "3.25",
+      "4.15",
+      "4.25",
+      "4.35"
+    ],
+    "a": 2,
+    "e": "2.50 + 1.75 = 4.25."
+  },
+  {
+    "q": "What is 5.6 − 2.3?",
+    "o": [
+      "2.3",
+      "3.3",
+      "3.9",
+      "4.3"
+    ],
+    "a": 1,
+    "e": "5.6 − 2.3 = 3.3."
+  },
+  {
+    "q": "What is 0.4 × 10?",
+    "o": [
+      "0.04",
+      "0.4",
+      "4",
+      "40"
+    ],
+    "a": 2,
+    "e": "Multiplying a decimal by 10 moves the decimal point one place right: 0.4 × 10 = 4."
+  },
+  {
+    "q": "What is 3/4 of 16?",
+    "o": [
+      "8",
+      "10",
+      "12",
+      "14"
+    ],
+    "a": 2,
+    "e": "3/4 × 16 = 3 × 4 = 12."
+  },
+  {
+    "q": "2 1/2 written as an improper fraction is:",
+    "o": [
+      "3/2",
+      "4/2",
+      "5/2",
+      "6/2"
+    ],
+    "a": 2,
+    "e": "2 1/2 = (2×2+1)/2 = 5/2."
+  },
+  {
+    "q": "A line segment has:",
+    "o": [
+      "No endpoints",
+      "One endpoint",
+      "Two endpoints",
+      "Three endpoints"
+    ],
+    "a": 2,
+    "e": "A line segment is a part of a line with two fixed endpoints."
+  },
+  {
+    "q": "A ray has:",
+    "o": [
+      "No endpoint",
+      "One endpoint",
+      "Two endpoints",
+      "Three endpoints"
+    ],
+    "a": 1,
+    "e": "A ray starts at one endpoint and extends endlessly in one direction."
+  },
+  {
+    "q": "A right angle measures:",
+    "o": [
+      "45°",
+      "60°",
+      "90°",
+      "180°"
+    ],
+    "a": 2,
+    "e": "A right angle measures exactly 90°."
+  },
+  {
+    "q": "A triangle has how many sides?",
+    "o": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "a": 1,
+    "e": "A triangle is a polygon with three sides."
+  },
+  {
+    "q": "What is the perimeter of a rectangle with length 8 cm and breadth 5 cm?",
+    "o": [
+      "13 cm",
+      "26 cm",
+      "40 cm",
+      "80 cm"
+    ],
+    "a": 1,
+    "e": "Perimeter = 2(l+b) = 2(8+5) = 26 cm."
+  },
+  {
+    "q": "What is the area of a rectangle with length 8 cm and breadth 5 cm?",
+    "o": [
+      "13 cm²",
+      "26 cm²",
+      "40 cm²",
+      "80 cm²"
+    ],
+    "a": 2,
+    "e": "Area = length × breadth = 8 × 5 = 40 cm²."
+  },
+  {
+    "q": "The perimeter of a square with side 6 cm is:",
+    "o": [
+      "12 cm",
+      "18 cm",
+      "24 cm",
+      "36 cm"
+    ],
+    "a": 2,
+    "e": "Perimeter of a square = 4 × side = 4 × 6 = 24 cm."
+  },
+  {
+    "q": "The area of a square with side 6 cm is:",
+    "o": [
+      "12 cm²",
+      "24 cm²",
+      "30 cm²",
+      "36 cm²"
+    ],
+    "a": 3,
+    "e": "Area of a square = side × side = 6 × 6 = 36 cm²."
+  },
+  {
+    "q": "A bar graph is especially useful for:",
+    "o": [
+      "Comparing data",
+      "Measuring angles",
+      "Finding area",
+      "Drawing circles"
+    ],
+    "a": 0,
+    "e": "Bar graphs display data using bars and make comparison between categories easy."
+  },
+  {
+    "q": "A pictograph represents data using:",
+    "o": [
+      "Only numbers",
+      "Pictures or symbols",
+      "Only equations",
+      "Angles"
+    ],
+    "a": 1,
+    "e": "A pictograph uses pictures or symbols to represent quantities."
+  },
+  {
+    "q": "If x + 5 = 12, then x is:",
+    "o": [
+      "5",
+      "6",
+      "7",
+      "17"
+    ],
+    "a": 2,
+    "e": "Subtract 5 from both sides: x = 12 − 5 = 7."
+  },
+  {
+    "q": "What comes next in the pattern 2, 4, 6, 8, ...?",
+    "o": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "a": 1,
+    "e": "The pattern increases by 2 each time, so the next number is 10."
+  },
+  {
+    "q": "If n = 3, what is 5n?",
+    "o": [
+      "8",
+      "10",
+      "15",
+      "20"
+    ],
+    "a": 2,
+    "e": "5n = 5 × 3 = 15."
+  },
+  {
+    "q": "The perimeter of a square is:",
+    "o": [
+      "2 × side",
+      "3 × side",
+      "4 × side",
+      "side × side"
+    ],
+    "a": 2,
+    "e": "A square has four equal sides, so its perimeter is 4 × side."
+  },
+  {
+    "q": "Which ratio is equivalent to 2 : 3?",
+    "o": [
+      "3 : 4",
+      "4 : 6",
+      "5 : 6",
+      "6 : 8"
+    ],
+    "a": 1,
+    "e": "Multiplying both parts of 2:3 by 2 gives 4:6."
+  },
+  {
+    "q": "Three pens cost ₹30. What is the cost of one pen?",
+    "o": [
+      "₹5",
+      "₹10",
+      "₹15",
+      "₹20"
+    ],
+    "a": 1,
+    "e": "₹30 ÷ 3 = ₹10 per pen."
+  },
+  {
+    "q": "Five notebooks cost ₹100. At the same rate, eight notebooks cost:",
+    "o": [
+      "₹120",
+      "₹140",
+      "₹160",
+      "₹180"
+    ],
+    "a": 2,
+    "e": "One notebook costs ₹20, so 8 notebooks cost 8 × ₹20 = ₹160."
+  },
+  {
+    "q": "1 hour is equal to:",
+    "o": [
+      "30 minutes",
+      "45 minutes",
+      "60 minutes",
+      "100 minutes"
+    ],
+    "a": 2,
+    "e": "1 hour = 60 minutes."
+  },
+  {
+    "q": "2 kg is equal to:",
+    "o": [
+      "20 g",
+      "200 g",
+      "2,000 g",
+      "20,000 g"
+    ],
+    "a": 2,
+    "e": "1 kg = 1,000 g, so 2 kg = 2,000 g."
+  },
+  {
+    "q": "A number divisible by 10 must end in:",
+    "o": [
+      "1",
+      "5",
+      "8",
+      "0"
+    ],
+    "a": 3,
+    "e": "A whole number is divisible by 10 when its last digit is 0."
+  }
+];
+
+const containers=['questionsA','questionsB','questionsC','questionsD','questionsE'];
+questions.forEach((item,i)=>{const div=document.createElement('div');div.className='question';div.id='q'+(i+1);div.innerHTML='<div class="question-text">Q'+(i+1)+'. '+item.q+'</div><div class="options">'+item.o.map((x,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}"><span><strong>${String.fromCharCode(65+j)})</strong> ${x}</span></label>`).join('')+'</div>';document.getElementById(containers[Math.floor(i/10)]).appendChild(div);});
+
+const form=document.getElementById('examForm');
+function updateProgress(){let n=0;questions.forEach((_,i)=>{if(document.querySelector(`input[name=q${i}]:checked`))n++;});document.getElementById('progressText').textContent=`${n} / 50 answered`;document.getElementById('progressBar').style.width=(n/50*100)+'%';}
+form.addEventListener('change',updateProgress);
+function goTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+
+function getCurrentAnswers(){return questions.map((_,i)=>{const x=document.querySelector(`input[name=q${i}]:checked`);return x?Number(x.value):null;});}
+const examLayout=document.getElementById('examLayout'),startBtn=document.getElementById('startBtn'),saveBtn=document.getElementById('saveBtn'),timer=document.getElementById('timer');
+let stopwatchSeconds=0,stopwatchStarted=false,stopwatchClock=null,stopwatchLastTick=0,examStarted=false,examPaused=true;
+const formatTime=t=>{t=Math.max(0,Math.floor(t));return `${String(Math.floor(t/3600)).padStart(2,'0')}:${String(Math.floor(t%3600/60)).padStart(2,'0')}:${String(t%60).padStart(2,'0')}`};
+const renderStopwatch=()=>{timer.textContent=formatTime(stopwatchSeconds);};
+function startStopwatch(){if(stopwatchClock)return;stopwatchStarted=true;stopwatchLastTick=Date.now();stopwatchClock=setInterval(()=>{let now=Date.now(),d=Math.floor((now-stopwatchLastTick)/1000);if(d){stopwatchSeconds+=d;stopwatchLastTick+=d*1000;renderStopwatch();}},250);}
+function stopStopwatch(){if(stopwatchClock){let now=Date.now(),d=Math.floor((now-stopwatchLastTick)/1000);if(d)stopwatchSeconds+=d;clearInterval(stopwatchClock);stopwatchClock=null;}stopwatchStarted=false;renderStopwatch();}
+function showExam(){examLayout.classList.remove('exam-hidden');examPaused=false;startBtn.textContent='Started';startBtn.disabled=true;saveBtn.textContent='Save Progress';startStopwatch();}
+function hideExam(){examLayout.classList.add('exam-hidden');examPaused=true;}
+function saveProgress(silent=false){localStorage.setItem('class6Math50Progress',JSON.stringify({answers:getCurrentAnswers(),stopwatchSeconds,examStarted,examPaused:true,savedAt:Date.now()}));stopStopwatch();hideExam();saveBtn.textContent='Resume';startBtn.textContent='Resume';startBtn.disabled=false;if(!silent)alert('Progress saved. Click Resume to continue.');}
+saveBtn.onclick=()=>{if(examStarted)saveProgress(false);};
+startBtn.onclick=()=>{examStarted=true;showExam();};
+function restore(){try{let x=JSON.parse(localStorage.getItem('class6Math50Progress'));if(x&&Array.isArray(x.answers)){x.answers.forEach((v,i)=>{if(v!==null){let r=document.querySelector(`input[name=q${i}][value="${v}"]`);if(r)r.checked=true;}});stopwatchSeconds=Number(x.stopwatchSeconds)||0;examStarted=!!x.examStarted;if(examStarted){hideExam();startBtn.textContent='Resume';saveBtn.textContent='Resume';}else{hideExam();}renderStopwatch();return;}}catch(e){}hideExam();renderStopwatch();}
+document.getElementById('submitBtn').onclick=()=>{let score=0,answered=0;questions.forEach((item,i)=>{const x=document.querySelector(`input[name=q${i}]:checked`);if(x){answered++;if(Number(x.value)===item.a)score++;}});stopStopwatch();document.getElementById('scoreText').textContent=`${score} / 50`;document.getElementById('resultDetails').textContent=`You answered ${answered} of 50 questions. Correct: ${score}. Incorrect: ${answered-score}. Skipped: ${50-answered}.`;document.getElementById('totalTime').textContent=`Total Time Taken: ${formatTime(stopwatchSeconds)}`;document.getElementById('result').style.display='block';document.getElementById('reviewSection').style.display='none';document.getElementById('result').scrollIntoView({behavior:'smooth'});localStorage.setItem('class6Math50Answers',JSON.stringify(questions.map((_,i)=>{const x=document.querySelector(`input[name=q${i}]:checked`);return x?Number(x.value):null})));};
+
+document.getElementById('reviewBtn').onclick=()=>{const box=document.getElementById('reviewContent');box.innerHTML='';let count=0;questions.forEach((item,i)=>{const x=document.querySelector(`input[name=q${i}]:checked`);const selected=x?Number(x.value):null;if(selected===item.a)return;count++;const card=document.createElement('div');card.className='review-card '+(selected===null?'skipped':'incorrect');const status=selected===null?'Skipped':'Incorrect';const selectedText=selected===null?'No answer selected':`${String.fromCharCode(65+selected)}) ${item.o[selected]}`;const correctText=`${String.fromCharCode(65+item.a)}) ${item.o[item.a]}`;card.innerHTML=`<h4>Q${i+1} — ${status}</h4><p><strong>Your answer:</strong> ${selectedText}</p><p><strong>Correct answer:</strong> ${correctText}</p><p><strong>Explanation:</strong> ${item.e}</p>`;box.appendChild(card);});if(!count)box.innerHTML='<div class="review-card correct"><h4>Excellent!</h4><p>All 50 answers are correct. There are no mistakes or skipped questions to review.</p></div>';document.getElementById('reviewSection').style.display='block';document.getElementById('reviewSection').scrollIntoView({behavior:'smooth'});};
+
+
+document.getElementById('resetBtn').onclick=()=>{if(confirm('Reset all 50 answers and restart the examination?')){form.reset();localStorage.removeItem('class6Math50Progress');localStorage.removeItem('class6Math50Answers');stopStopwatch();stopwatchSeconds=0;examStarted=false;hideExam();startBtn.textContent='Start';saveBtn.textContent='Save Progress';startBtn.disabled=false;renderStopwatch();document.getElementById('result').style.display='none';document.getElementById('reviewSection').style.display='none';updateProgress();window.scrollTo({top:0,behavior:'smooth'});}};
+renderStopwatch();restore();
+</script>
+</body></html>
