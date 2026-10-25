@@ -3,777 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Interactive Class 11 Mathematics mock examination with 50 MCQs.">
 <title>Class 11 Mathematics — 50 MCQ Mock Examination</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;font-family:Arial,Helvetica,sans-serif;background:#d5dfed;color:#1d2940}
-.header{margin:20px;padding:22px 24px;text-align:center;color:white;background:#294b9b;border-radius:30px;box-shadow:0 5px 14px rgba(0,0,0,.12)}
-.header h1{margin:0 0 8px;font-size:clamp(25px,4vw,38px)}
-.header p{margin:5px 0;font-size:16px}
-.layout{width:min(1200px,94%);margin:auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:24px;align-items:start;padding-bottom:30px}
-.sidebar{position:sticky;top:15px;background:white;border-radius:18px;padding:20px;box-shadow:0 4px 12px rgba(0,0,0,.1)}
-.sidebar h3{margin-top:0}
-.progress{height:9px;background:#e6e9ef;border-radius:10px;overflow:hidden;margin:10px 0 18px}
-.progressBar{height:100%;width:0;background:#294b9b;transition:width .25s}
-.section-link{display:block;width:100%;padding:10px;margin:7px 0;border:0;border-radius:9px;background:#eef1f7;color:#263655;text-align:left;cursor:pointer;font-weight:bold;transition:background 0.2s}
-.section-link:hover,.section-link.active{background:#dbe5ff}
-.exam{background:white;border-radius:20px;padding:clamp(20px,4vw,40px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
-.exam-title{text-align:center;border-bottom:2px solid #e1e5ec;padding-bottom:18px;margin-bottom:24px}
-.exam-title h2{margin:0 0 8px;color:#294b9b}
-.meta{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 22px;font-size:15px}
-.instructions{background:#f5f7fb;border-left:5px solid #294b9b;border-radius:10px;padding:16px 20px;margin-bottom:28px}
-.instructions h3{margin-top:0}
-.instructions li{margin:8px 0}
-.section{margin:32px 0;scroll-margin-top:20px}
-.section h2{color:#17213a;border-bottom:2px solid #dfe4ec;padding-bottom:10px}
-.question{padding:18px 0;border-bottom:1px solid #e8ebf0}
-.question-text{font-weight:bold;line-height:1.55;margin-bottom:12px;font-size:16px}
-.options{display:grid;gap:9px}
-.option{display:flex;align-items:flex-start;gap:10px;padding:11px 13px;border:2px solid #e1e4ea;border-radius:9px;cursor:pointer;transition:.15s}
-.option:hover{background:#f5f7fb;border-color:#b8c4dc}
-.option:has(input:checked){background:#e7efff;border-color:#294b9b}
-input[type=radio]{margin-top:3px;cursor:pointer}
-.top-start{text-align:center;margin:20px 0}
-.start-action{background:#1565c0;min-width:140px;font-size:17px}
-.exam-hidden{display:none!important}
-.timer{position:fixed;right:20px;bottom:20px;z-index:20;background:#ffeb3b;color:#222;padding:10px 16px;border-radius:22px;font-weight:bold;box-shadow:0 4px 12px rgba(0,0,0,.18);font-size:16px;transition:background-color 0.3s, color 0.3s}
-.timer.warning{background:#ff9800;color:white}
-.timer.danger{background:#d32f2f;color:white}
-.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
-button.action{border:0;border-radius:9px;padding:12px 18px;cursor:pointer;color:white;font-weight:bold;font-size:15px;transition:opacity 0.2s}
-button.action:hover{opacity:0.9}
-#submitBtn{background:#294b9b}
-#saveBtn{background:#388e3c}
-#resetBtn{background:#757575}
-#reviewBtn{background:#7b1fa2}
-.result{display:none;margin-top:25px;padding:20px;border-radius:14px;background:#eef7ee;border:2px solid #9ccc9c}
-.result h3{margin-top:0}
-.review{display:none;margin-top:20px}
-.review-card{padding:16px;margin:12px 0;border-radius:12px;border-left:6px solid}
-.review-card.incorrect{background:#fff0f0;border-color:#d32f2f}
-.review-card.skipped{background:#fff8e6;border-color:#f57c00}
-.review-card.correct{background:#eff9f0;border-color:#388e3c}
-.review-card h4{margin:0 0 8px;font-size:16px}
-.review-card p{margin:6px 0;line-height:1.5;font-size:15px}
-.score-big{font-size:32px;font-weight:800;color:#294b9b}
-.footer{text-align:center;color:#60708c;padding:10px 0 30px}
-
-/* Custom Modal Dialog Box */
-.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:100;opacity:0;pointer-events:none;transition:opacity 0.25s ease}
-.modal-overlay.active{opacity:1;pointer-events:auto}
-.modal-box{background:white;padding:24px;border-radius:16px;width:min(90%,420px);box-shadow:0 10px 25px rgba(0,0,0,0.2);text-align:center}
-.modal-box h3{margin-top:0;color:#1d2940}
-.modal-box p{color:#4a5568;margin-bottom:20px;line-height:1.5}
-.modal-btns{display:flex;justify-content:center;gap:12px}
-.btn-confirm{background:#d32f2f;color:white;border:0;padding:10px 20px;border-radius:8px;font-weight:bold;cursor:pointer}
-.btn-cancel{background:#e2e8f0;color:#2d3748;border:0;padding:10px 20px;border-radius:8px;font-weight:bold;cursor:pointer}
-.btn-ok{background:#294b9b;color:white;border:0;padding:10px 24px;border-radius:8px;font-weight:bold;cursor:pointer}
-
-@media(max-width:850px){
-  .layout{grid-template-columns:1fr}
-  .sidebar{position:static}
-  .timer{right:10px;bottom:10px}
-  .section-link{display:inline-block;width:auto;margin-right:5px}
-}
+:root{--blue:#294b9b;--blue-dark:#17336f;--blue-pale:#e8efff;--ink:#1d2940;--muted:#66748b;--line:#e1e7f0;--panel:#fff;--page:#edf2fa;--green:#278348;--red:#c53535;--amber:#b86b00;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--page);color:var(--ink)}
+.header{margin:20px auto 16px;width:min(1450px,calc(100% - 32px));padding:27px 24px;text-align:center;color:white;background:linear-gradient(135deg,#213f8c,#3764bf);border-radius:24px;box-shadow:0 10px 28px rgba(28,57,120,.18)}.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:800;opacity:.85}.header h1{margin:8px 0;font-size:clamp(27px,4vw,40px);letter-spacing:-.03em}.header p{margin:6px 0 0;opacity:.92;font-size:15px}.header-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin-top:17px}.header-meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);padding:7px 12px;border-radius:999px;font-size:13px;font-weight:700}
+.top-start{text-align:center;margin:18px 0 22px}.action{border:0;border-radius:10px;padding:12px 17px;cursor:pointer;color:white;font-weight:750;font-size:14px;transition:transform .15s,filter .15s,box-shadow .15s}.action:hover{filter:brightness(1.06);transform:translateY(-1px)}.action:focus-visible,.section-link:focus-visible,.option:focus-within{outline:3px solid #8db1ff;outline-offset:2px}.action:disabled{opacity:.6;cursor:not-allowed;transform:none}.start-action{background:#1565c0;min-width:160px;font-size:16px;box-shadow:0 5px 16px #1d4e9d35}.layout{width:min(1450px,calc(100% - 32px));margin:auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:22px;align-items:start;padding-bottom:28px}.exam-hidden{display:none!important}
+.sidebar{position:sticky;top:14px;background:var(--panel);border:1px solid #e3e9f2;border-radius:18px;padding:20px;box-shadow:0 5px 18px rgba(27,46,84,.06)}.sidebar h3{margin:0 0 6px;font-size:17px}.muted{color:var(--muted);font-size:13px;line-height:1.5}.progress{height:9px;background:#e7ebf3;border-radius:10px;overflow:hidden;margin:13px 0 8px}.progressBar{height:100%;width:0;background:linear-gradient(90deg,#294b9b,#7294e4);transition:width .25s}.progress-row{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--muted)}.section-nav{margin-top:18px}.section-link{display:block;width:100%;padding:10px 11px;margin:6px 0;border:1px solid transparent;border-radius:9px;background:#f2f5fa;color:#34445f;text-align:left;cursor:pointer;font-weight:700;font-size:12px;line-height:1.4;transition:background .2s,border-color .2s}.section-link:hover,.section-link.active{background:#e5edff;color:#20448f;border-color:#d4e0ff}.side-note{margin-top:17px;padding-top:14px;border-top:1px solid var(--line)}.exam{background:var(--panel);border:1px solid #e3e9f2;border-radius:20px;padding:clamp(20px,4vw,42px);box-shadow:0 5px 18px rgba(27,46,84,.06);min-width:0}.exam-title{text-align:center;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:23px}.exam-title h2{margin:0 0 12px;color:var(--blue);font-size:clamp(20px,3vw,27px)}.meta{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:#586681}.meta span{padding:6px 10px;background:#f4f6fb;border-radius:8px}.instructions{background:#f5f7fc;border:1px solid #e4eaf4;border-left:5px solid var(--blue);border-radius:12px;padding:17px 20px;margin-bottom:28px}.instructions h3{margin:0 0 8px;font-size:16px}.instructions ol{margin:0;padding-left:20px}.instructions li{margin:7px 0;line-height:1.5;font-size:13px;color:#495875}.section{margin:32px 0;scroll-margin-top:18px}.section h2{color:#1d2c4a;border-bottom:2px solid #dfe6f0;padding-bottom:11px;font-size:clamp(16px,2vw,20px);line-height:1.4}.question{padding:19px 0;border-bottom:1px solid #e8edf4;scroll-margin-top:20px}.question-text{font-weight:750;line-height:1.6;margin-bottom:13px;font-size:15px}.q-number{display:inline-flex;align-items:center;justify-content:center;background:#edf2ff;color:#294b9b;border-radius:7px;min-width:34px;height:27px;margin-right:7px;font-size:12px}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.option{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border:1.5px solid #dfe5ef;border-radius:10px;cursor:pointer;transition:background .15s,border-color .15s;min-width:0;line-height:1.45;font-size:14px}.option:hover{background:#f7f9fd;border-color:#aebfe0}.option:has(input:checked){background:#e8efff;border-color:var(--blue)}.option input{margin-top:3px;accent-color:var(--blue);flex:0 0 auto}.option-label{font-weight:800;color:#50617f;min-width:18px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px;padding-top:20px;border-top:1px solid var(--line)}#saveBtn{background:#278348}#resetBtn{background:#6c7789}#submitBtn{background:var(--blue)}#reviewBtn{background:#7b35a1}.result{display:none;margin-top:25px;padding:22px;border-radius:15px;background:#f0f8f1;border:1px solid #bfdfc4}.result h3{margin:0 0 12px}.score-big{font-size:38px;font-weight:850;color:var(--blue);letter-spacing:-.04em}.score-meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.score-pill{padding:7px 11px;border-radius:999px;background:#fff;border:1px solid #dce8dd;font-size:13px;font-weight:700}.review{display:none;margin-top:22px}.review h3{margin-bottom:5px}.review-card{padding:16px;margin:12px 0;border-radius:12px;border-left:5px solid}.review-card.incorrect{background:#fff1f1;border-color:var(--red)}.review-card.skipped{background:#fff8e9;border-color:#d78a18}.review-card.correct{background:#eff8f0;border-color:var(--green)}.review-card h4{margin:0 0 8px;font-size:15px}.review-card p{margin:6px 0;line-height:1.5;font-size:14px}.answer-correct{color:#216f3e;font-weight:750}.timer{position:fixed;right:18px;bottom:18px;z-index:20;background:#ffef79;color:#262626;padding:10px 15px;border-radius:999px;font-weight:800;box-shadow:0 4px 15px #17274425;font-size:14px;font-variant-numeric:tabular-nums}.timer.warning{background:#f4a62a;color:white}.timer.danger{background:#cf3434;color:white}.footer{text-align:center;color:#77849b;padding:3px 0 28px;font-size:12px}.modal-overlay{position:fixed;inset:0;background:rgba(14,24,44,.48);display:flex;align-items:center;justify-content:center;z-index:100;opacity:0;pointer-events:none;transition:opacity .2s;padding:16px}.modal-overlay.active{opacity:1;pointer-events:auto}.modal-box{background:white;padding:24px;border-radius:17px;width:min(100%,420px);box-shadow:0 14px 40px #101b322e;text-align:center}.modal-box h3{margin-top:0}.modal-box p{color:#526079;margin-bottom:20px;line-height:1.5;font-size:14px}.modal-btns{display:flex;justify-content:center;gap:10px}.btn-confirm,.btn-cancel,.btn-ok{border:0;padding:10px 16px;border-radius:8px;font-weight:750;cursor:pointer}.btn-confirm{background:#c73535;color:white}.btn-cancel{background:#e7ebf2;color:#26344d}.btn-ok{background:var(--blue);color:white}.saved-banner{display:none;margin-bottom:18px;padding:11px 14px;background:#eff8f0;border:1px solid #cde7d1;border-radius:10px;color:#246a39;font-size:13px;font-weight:700}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:static}.section-nav{display:flex;flex-wrap:wrap;gap:5px}.section-link{display:inline-block;width:auto;flex:1 1 145px;margin:0}.options{grid-template-columns:1fr}.timer{right:10px;bottom:10px}.header{margin-top:10px}}
+@media(max-width:520px){.layout,.header{width:calc(100% - 20px)}.header{padding:22px 16px;border-radius:18px}.exam{padding:18px 14px}.sidebar{padding:16px}.actions .action{flex:1 1 100%}.meta{gap:6px}.instructions{padding:14px}.timer{font-size:12px;padding:8px 11px}}
+@media print{body{background:white}.header,.sidebar,.top-start,.timer,.actions,.instructions,.footer{display:none!important}.layout{display:block;width:100%;padding:0}.exam{box-shadow:none;border:0;padding:0}.exam-hidden{display:block!important}.question,.section{break-inside:avoid}.option{border:1px solid #ddd}.result,.review{display:none!important}}
 </style>
 </head>
 <body>
-<div class="header">
+<header class="header">
+  <div class="eyebrow">Practice • Revise • Improve</div>
   <h1>Class 11 Mathematics</h1>
   <p>50-MCQ Mock Examination</p>
-  <p>Class 11 Mathematics • Grade 11 • Maximum Marks: 50 • Time: 3 Hours</p>
-</div>
-
-<div class="top-start">
-  <button class="action start-action" id="startBtn" type="button">Start</button>
-</div>
-
+  <div class="header-meta"><span>50 Questions</span><span>50 Marks</span><span>Suggested time: 60 minutes</span><span>Answer review included</span></div>
+</header>
+<div class="top-start"><button class="action start-action" id="startBtn" type="button">Start Examination</button><div class="muted" id="startHint" style="margin-top:8px">Your questions and timer will begin when you start.</div></div>
 <div class="layout exam-hidden" id="examLayout">
-<aside class="sidebar">
-  <h3>Exam Progress</h3>
-  <div class="progress"><div class="progressBar" id="progressBar"></div></div>
-  <p id="progressText">0 / 50 answered</p>
-  <button class="section-link active" onclick="goTo('secA')">Section A — 1–10</button>
-  <button class="section-link" onclick="goTo('secB')">Section B — 11–20</button>
-  <button class="section-link" onclick="goTo('secC')">Section C — 21–30</button>
-  <button class="section-link" onclick="goTo('secD')">Section D — 31–40</button>
-  <button class="section-link" onclick="goTo('secE')">Section E — 41–50</button>
-  <p><strong>All 50 questions are MCQs.</strong></p>
-  <p>There are no written-answer questions.</p>
-</aside>
-
-<main class="exam">
-  <div class="exam-title">
-    <h2>Class 11 Mathematics Mock Examination Paper</h2>
-    <div class="meta">
-      <span><strong>Questions:</strong> 50</span>
-      <span><strong>Marks:</strong> 50</span>
-      <span><strong>Time:</strong> 3 Hours</span>
-    </div>
-  </div>
-
-  <div class="instructions">
-    <h3>General Instructions</h3>
-    <ol>
-      <li>This question paper contains 50 Multiple Choice Questions covering Class 11 Mathematics syllabus.</li>
-      <li>Each question carries 1 mark. There is no negative marking.</li>
-      <li>All questions are compulsory.</li>
-      <li>Select one option for each question.</li>
-      <li>Calculators and external aids are not permitted.</li>
-      <li>After submission, click <strong>Know what you made wrong</strong> to see incorrect and skipped questions with step-by-step explanations.</li>
-    </ol>
-  </div>
-
-  <form id="examForm">
-    <section class="section" id="secA">
-      <h2>Section A — Sets, Relations & Functions, Complex Numbers & Quadratic Equations</h2>
-      <div id="questionsA"></div>
-    </section>
-    <section class="section" id="secB">
-      <h2>Section B — Linear Inequalities, Permutations & Combinations, Binomial Theorem</h2>
-      <div id="questionsB"></div>
-    </section>
-    <section class="section" id="secC">
-      <h2>Section C — Sequences & Series, Straight Lines, Conic Sections</h2>
-      <div id="questionsC"></div>
-    </section>
-    <section class="section" id="secD">
-      <h2>Section D — Three Dimensional Geometry, Limits & Derivatives</h2>
-      <div id="questionsD"></div>
-    </section>
-    <section class="section" id="secE">
-      <h2>Section E — Statistics, Probability & Trigonometric Functions</h2>
-      <div id="questionsE"></div>
-    </section>
-  </form>
-
-  <div class="actions">
-    <button type="button" class="action" id="saveBtn">Save Progress</button>
-    <button type="button" class="action" id="resetBtn">Reset Answers</button>
-    <button type="button" class="action" id="submitBtn">Submit Examination</button>
-  </div>
-
-  <div class="result" id="result">
-    <h3>Examination Result</h3>
-    <div class="score-big" id="scoreText"></div>
-    <p id="resultDetails"></p>
-    <p id="totalTime" style="font-size:18px;font-weight:bold;color:#294b9b;margin-top:12px;">Total Time Taken: 00:00:00</p>
-    <button type="button" class="action" id="reviewBtn">Know what you made wrong</button>
-  </div>
-
-  <div class="review" id="reviewSection">
-    <h3>Question Review</h3>
-    <p>Incorrect questions and skipped questions are shown below. Correct questions are omitted from review.</p>
-    <div id="reviewContent"></div>
-  </div>
-</main>
+  <aside class="sidebar">
+    <h3>Exam Progress</h3><div class="muted">Track your answered questions</div>
+    <div class="progress"><div class="progressBar" id="progressBar"></div></div>
+    <div class="progress-row"><span id="progressText">0 / 50 answered</span><strong id="progressPct">0%</strong></div>
+    <nav class="section-nav" aria-label="Question sections" id="sectionNav"></nav>
+    <div class="side-note"><strong style="font-size:13px">Quick reminder</strong><p class="muted">Choose one option per question. You can save your progress and continue later on this browser.</p></div>
+  </aside>
+  <main class="exam">
+    <div class="saved-banner" id="savedBanner">Your saved progress has been restored.</div>
+    <div class="exam-title"><h2>Mathematics Mock Examination Paper</h2><div class="meta"><span><strong>Questions:</strong> 50</span><span><strong>Marks:</strong> 50</span><span><strong>Duration:</strong> 60 minutes suggested</span></div></div>
+    <div class="instructions"><h3>General Instructions</h3><ol><li>This practice paper contains 50 MCQs based on the accompanying Class 11 Mathematics PDF.</li><li>Each question carries 1 mark. There is no negative marking.</li><li>Select one option for each question. Unanswered questions count as skipped.</li><li>Use <strong>Save Progress</strong> to pause the timer and hide the questions; select <strong>Resume</strong> to continue.</li><li>After submitting, open <strong>Review Answers</strong> to see incorrect and skipped questions with the correct answers.</li></ol></div>
+    <form id="examForm"></form>
+    <div class="actions"><button type="button" class="action" id="saveBtn">Save Progress</button><button type="button" class="action" id="resetBtn">Reset Answers</button><button type="button" class="action" id="submitBtn">Submit Examination</button></div>
+    <div class="result" id="result"><h3>Examination Result</h3><div class="score-big" id="scoreText">0 / 50</div><div class="score-meta" id="scorePills"></div><p id="resultDetails"></p><p id="totalTime" style="font-weight:800;color:var(--blue)">Time taken: 00:00:00</p><button type="button" class="action" id="reviewBtn">Review Answers</button></div>
+    <div class="review" id="reviewSection"><h3>Question Review</h3><p class="muted">Incorrect and skipped questions are shown below.</p><div id="reviewContent"></div></div>
+  </main>
 </div>
-
-<div class="timer" id="timer">00:00:00</div>
-<div class="footer">Class 11 Mathematics • 50 MCQs • Interactive Mock Examination</div>
-
-<!-- Custom Dialog Modal -->
-<div class="modal-overlay" id="customModal">
-  <div class="modal-box">
-    <h3 id="modalTitle">Notice</h3>
-    <p id="modalMessage">Message content goes here.</p>
-    <div class="modal-btns" id="modalBtns">
-      <button class="btn-ok" id="modalOkBtn">OK</button>
-    </div>
-  </div>
-</div>
-
+<div class="timer" id="timer" aria-live="off">00:00:00</div>
+<div class="footer">Class 11 Mathematics • 50 MCQs • Interactive mock examination</div>
+<div class="modal-overlay" id="customModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-box"><h3 id="modalTitle">Notice</h3><p id="modalMessage">Message content goes here.</p><div class="modal-btns" id="modalBtns"><button class="btn-ok" id="modalOkBtn" type="button">OK</button></div></div></div>
 <script>
-const questions = [
-  // SECTION A: Questions 1 to 10
-  {
-    q: "If a set A has 5 elements, how many non-empty proper subsets does A have?",
-    o: ["32", "31", "30", "25"],
-    a: 2,
-    e: "The total number of subsets of a set with n elements is 2ⁿ. For n = 5, total subsets = 2⁵ = 32. Proper subsets exclude the set itself (subtract 1), and non-empty subsets exclude the empty set ∅ (subtract 1). Thus, non-empty proper subsets = 32 − 2 = 30."
-  },
-  {
-    q: "In a class, n(A) = 20 students play Cricket, n(B) = 30 play Football, and n(A ∪ B) = 45 play at least one game. Find the number of students who play Cricket only, i.e., n(A \\ B).",
-    o: ["15", "10", "25", "5"],
-    a: 0,
-    e: "By the Principle of Inclusion-Exclusion: n(A ∩ B) = n(A) + n(B) − n(A ∪ B) = 20 + 30 − 45 = 5. The number of students playing Cricket only is n(A \\ B) = n(A) − n(A ∩ B) = 20 − 5 = 15."
-  },
-  {
-    q: "Find the domain of the real function f(x) = √(9 − x²).",
-    o: ["(−3, 3)", "[−3, 3]", "[0, 3]", "(−∞, 3]"],
-    a: 1,
-    e: "For f(x) to be defined for real values, the expression under the square root must be non-negative: 9 − x² ≥ 0  ⇒  x² ≤ 9  ⇒  −3 ≤ x ≤ 3. Thus, Domain = [−3, 3]."
-  },
-  {
-    q: "Find the range of the function f(x) = 1 / (2 − sin 3x).",
-    o: ["[1/3, 1]", "(1/3, 1)", "[0, 1]", "[1/2, 1]"],
-    a: 0,
-    e: "We know that −1 ≤ sin 3x ≤ 1 for all x. Multiplying by −1 gives −1 ≤ −sin 3x ≤ 1. Adding 2 yields 1 ≤ 2 − sin 3x ≤ 3. Taking reciprocals reverses inequalities: 1/3 ≤ 1 / (2 − sin 3x) ≤ 1. Hence, Range = [1/3, 1]."
-  },
-  {
-    q: "Evaluate the sum of powers of imaginary unit: i¹⁰⁹ + i¹¹⁰ + i¹¹¹ + i¹¹².",
-    o: ["0", "1", "i", "−1"],
-    a: 0,
-    e: "The sum of any four consecutive powers of i is always 0 because i + i² + i³ + i⁴ = i − 1 − i + 1 = 0. Here i¹⁰⁹(1 + i + i² + i³) = i¹⁰⁹(1 + i − 1 − i) = 0."
-  },
-  {
-    q: "Find the modulus and principal argument of the complex number z = 1 + i√3.",
-    o: ["Modulus = 2, Argument = π/6", "Modulus = 2, Argument = π/3", "Modulus = 4, Argument = π/3", "Modulus = 2, Argument = 2π/3"],
-    a: 1,
-    e: "Modulus |z| = √(1² + (√3)²) = √(1 + 3) = 2. Since both real part (1 > 0) and imaginary part (√3 > 0) are positive, z lies in the 1st quadrant. Argument θ = tan⁻¹(√3/1) = π/3."
-  },
-  {
-    q: "If z = (1 + i) / (1 − i), then the value of z¹⁰⁰ is:",
-    o: ["1", "−1", "i", "−i"],
-    a: 0,
-    e: "Rationalising z: z = (1 + i)² / ((1 − i)(1 + i)) = (1 + 2i − 1) / 2 = 2i / 2 = i. Therefore, z¹⁰⁰ = i¹⁰⁰ = (i⁴)²⁵ = 1²⁵ = 1."
-  },
-  {
-    q: "If α and β are the roots of the quadratic equation x² − 5x + 6 = 0, find the value of α³ + β³.",
-    o: ["35", "65", "125", "95"],
-    a: 0,
-    e: "From the given equation, sum of roots α + β = 5 and product of roots αβ = 6. Using algebraic identity: α³ + β³ = (α + β)³ − 3αβ(α + β) = (5)³ − 3(6)(5) = 125 − 90 = 35."
-  },
-  {
-    q: "The complex roots of the quadratic equation x² + 2x + 5 = 0 are:",
-    o: ["1 ± 2i", "−1 ± 2i", "−1 ± i", "−2 ± 4i"],
-    a: 1,
-    e: "Using the quadratic formula x = [−b ± √(b² − 4ac)] / (2a): x = [−2 ± √(4 − 20)] / 2 = [−2 ± √(−16)] / 2 = [−2 ± 4i] / 2 = −1 ± 2i."
-  },
-  {
-    q: "If set A = {1, 2} and set B = {a, b}, the total number of relations from A to B is:",
-    o: ["4", "8", "16", "32"],
-    a: 2,
-    e: "The number of elements in Cartesian product n(A × B) = n(A) × n(B) = 2 × 2 = 4. The total number of relations from A to B is the number of subsets of A × B, which is 2⁴ = 16."
-  },
-
-  // SECTION B: Questions 11 to 20
-  {
-    q: "Solve the linear inequality (2x − 3)/4 + 9 ≥ 3 + (4x)/3 for real values of x.",
-    o: ["(−∞, 63/10]", "[63/10, ∞)", "(−∞, 6.3)", "[6.3, ∞)"],
-    a: 0,
-    e: "Rearranging terms: (2x − 3)/4 + 6 ≥ (4x)/3. Multiply both sides by 12 (LCM of 4 and 3): 3(2x − 3) + 72 ≥ 4(4x)  ⇒  6x − 9 + 72 ≥ 16x  ⇒  6x + 63 ≥ 16x  ⇒  63 ≥ 10x  ⇒  x ≤ 63/10. Solution set = (−∞, 63/10]."
-  },
-  {
-    q: "Find the solution set of the absolute value inequality |x − 2| ≤ 5.",
-    o: ["[−3, 7]", "(−3, 7)", "[−5, 5]", "[−7, 3]"],
-    a: 0,
-    e: "By absolute value inequality properties, |x − 2| ≤ 5 is equivalent to −5 ≤ x − 2 ≤ 5. Adding 2 across all parts yields −3 ≤ x ≤ 7, which in interval notation is [−3, 7]."
-  },
-  {
-    q: "If ⁿC₁₂ = ⁿC₈, find the value of ⁿC₁₇.",
-    o: ["1140", "190", "380", "2280"],
-    a: 0,
-    e: "Using the combination identity ⁿC_a = ⁿC_b  ⇒  n = a + b, we get n = 12 + 8 = 20. Then ²⁰C₁₇ = ²⁰C₃ = (20 × 19 × 18) / (3 × 2 × 1) = 1140."
-  },
-  {
-    q: "How many words (with or without meaning) can be formed using all letters of 'EQUATION' so that vowels always occur together?",
-    o: ["2880", "40320", "1440", "5760"],
-    a: 0,
-    e: "'EQUATION' has 8 distinct letters with 5 vowels (E, U, A, I, O) and 3 consonants (Q, T, N). Treat 5 vowels as 1 single block. Total items to arrange = 1 block + 3 consonants = 4 items, arranged in 4! = 24 ways. The 5 vowels within their block can be arranged in 5! = 120 ways. Total words = 24 × 120 = 2880."
-  },
-  {
-    q: "In how many ways can 6 people be seated around a circular dining table?",
-    o: ["720", "120", "360", "24"],
-    a: 1,
-    e: "The number of circular permutations of n distinct objects is given by (n − 1)!. For n = 6, total circular seating arrangements = (6 − 1)! = 5! = 120."
-  },
-  {
-    q: "Find the 4th term in the expansion of (x − 2y)⁶.",
-    o: ["160 x³ y³", "−160 x³ y³", "−20 x³ y³", "240 x³ y³"],
-    a: 1,
-    e: "General term T_{r+1} = ⁿC_r (a)^{n-r} (b)^r. For T₄, r = 3, n = 6, a = x, b = −2y. T₄ = ⁶C₃ (x)⁶⁻³ (−2y)³ = 20 × x³ × (−8y³) = −160 x³ y³."
-  },
-  {
-    q: "The middle term in the binomial expansion of (x + 1/x)¹⁰ is:",
-    o: ["252", "210", "120", "252 x"],
-    a: 0,
-    e: "Since n = 10 is even, there is one middle term: T_{(10/2)+1} = T₆. T₆ = ¹⁰C₅ (x)⁵ (1/x)⁵ = ¹⁰C₅ = (10 × 9 × 8 × 7 × 6) / (5 × 4 × 3 × 2 × 1) = 252."
-  },
-  {
-    q: "If the sum of all binomial coefficients in the expansion of (1 + x)ⁿ is 1024, find n.",
-    o: ["8", "9", "10", "12"],
-    a: 2,
-    e: "Sum of coefficients in (1 + x)ⁿ is obtained by setting x = 1, giving 2ⁿ. Given 2ⁿ = 1024. Since 2¹⁰ = 1024, we get n = 10."
-  },
-  {
-    q: "A committee of 3 persons is to be formed from a group of 2 men and 3 women. In how many ways can this be done?",
-    o: ["10", "6", "12", "15"],
-    a: 0,
-    e: "Total persons = 2 + 3 = 5. Choosing any 3 persons from 5 is given by ⁵C₃ = (5 × 4 × 3) / (3 × 2 × 1) = 10 ways."
-  },
-  {
-    q: "How many litres of water must be added to 1125 litres of a 45% acid solution so that the resulting mixture contains between 25% and 30% acid?",
-    o: ["More than 562.5 L and less than 900 L", "More than 450 L and less than 800 L", "More than 500 L and less than 750 L", "More than 600 L and less than 950 L"],
-    a: 0,
-    e: "Let x litres of water be added. Total mixture = (1125 + x) litres. Pure acid = 45% of 1125 = 506.25 L. Inequality: 25% < 506.25/(1125+x) < 30%. From 30%: 0.30(1125+x) > 506.25 ⇒ 337.5 + 0.3x > 506.25 ⇒ x > 562.5 L. From 25%: 0.25(1125+x) < 506.25 ⇒ 281.25 + 0.25x < 506.25 ⇒ x < 900 L. Result: Between 562.5 L and 900 L."
-  },
-
-  // SECTION C: Questions 21 to 30
-  {
-    q: "If the 5th term of a Geometric Progression (GP) is 2 and the 10th term is 64, find the common ratio r.",
-    o: ["2", "3", "4", "√2"],
-    a: 0,
-    e: "In GP, T₅ = a r⁴ = 2 and T₁₀ = a r⁹ = 64. Dividing T₁₀ by T₅: (a r⁹)/(a r⁴) = 64/2  ⇒  r⁵ = 32  ⇒  r = 2."
-  },
-  {
-    q: "Find the sum of the infinite geometric series: 1 + 1/3 + 1/9 + 1/27 + ...",
-    o: ["3/2", "4/3", "2", "5/3"],
-    a: 0,
-    e: "First term a = 1, common ratio r = 1/3. Since |r| < 1, sum to infinity S_∞ = a / (1 − r) = 1 / (1 − 1/3) = 1 / (2/3) = 3/2."
-  },
-  {
-    q: "The sum of the squares of the first n natural numbers (1² + 2² + 3² + ... + n²) is equal to:",
-    o: ["[n(n+1)/2]²", "n(n+1)(2n+1)/6", "n(n+1)/2", "n(n+1)(n+2)/6"],
-    a: 1,
-    e: "The standard algebraic formula for the sum of squares of first n natural numbers Σn² is n(n + 1)(2n + 1) / 6."
-  },
-  {
-    q: "Find the slope of the straight line passing through the points P(3, −2) and Q(−1, 4).",
-    o: ["−3/2", "3/2", "−2/3", "2/3"],
-    a: 0,
-    e: "Slope m = (y₂ − y₁) / (x₂ − x₁) = (4 − (−2)) / (−1 − 3) = 6 / (−4) = −3/2."
-  },
-  {
-    q: "Find the perpendicular distance of the point (3, −5) from the straight line 3x − 4y − 26 = 0.",
-    o: ["3/5", "1", "7/5", "2"],
-    a: 0,
-    e: "Perpendicular distance d = |a x₁ + b y₁ + c| / √(a² + b²) = |3(3) − 4(−5) − 26| / √(3² + (−4)²) = |9 + 20 − 26| / √(9 + 16) = |3| / 5 = 3/5."
-  },
-  {
-    q: "Find the acute angle between the straight lines y − √3 x − 5 = 0 and √3 y − x + 6 = 0.",
-    o: ["30°", "45°", "60°", "90°"],
-    a: 0,
-    e: "Line 1: y = √3 x + 5  ⇒  slope m₁ = √3 (inclination θ₁ = 60°). Line 2: y = (1/√3)x − 6/√3  ⇒  slope m₂ = 1/√3 (inclination θ₂ = 30°). Acute angle between lines θ = |60° − 30°| = 30°."
-  },
-  {
-    q: "Find the coordinates of the focus and the equation of the directrix for the parabola y² = −12x.",
-    o: ["Focus (−3, 0), Directrix x = 3", "Focus (3, 0), Directrix x = −3", "Focus (0, −3), Directrix y = 3", "Focus (0, 3), Directrix y = −3"],
-    a: 0,
-    e: "Comparing y² = −12x with standard form y² = −4ax: 4a = 12  ⇒  a = 3. The parabola opens to the left. Focus is (−a, 0) = (−3, 0), and the equation of directrix is x = a  ⇒  x = 3."
-  },
-  {
-    q: "Find the eccentricity of the ellipse x²/25 + y²/9 = 1.",
-    o: ["4/5", "3/5", "16/25", "3/4"],
-    a: 0,
-    e: "Here a² = 25 and b² = 9. For an ellipse, b² = a²(1 − e²). Thus 9 = 25(1 − e²)  ⇒  1 − e² = 9/25  ⇒  e² = 16/25  ⇒  e = 4/5."
-  },
-  {
-    q: "The length of the latus rectum of the hyperbola x²/16 − y²/9 = 1 is:",
-    o: ["9/2", "9/4", "8/3", "18"],
-    a: 0,
-    e: "Here a² = 16 (so a = 4) and b² = 9. The length of the latus rectum for a hyperbola is 2b²/a = 2(9)/4 = 18/4 = 9/2."
-  },
-  {
-    q: "If Arithmetic Mean (AM) and Geometric Mean (GM) of two positive numbers are 10 and 8 respectively, find the numbers.",
-    o: ["16 and 4", "12 and 8", "18 and 2", "15 and 5"],
-    a: 0,
-    e: "AM = (a + b)/2 = 10  ⇒  a + b = 20. GM = √(ab) = 8  ⇒  ab = 64. The numbers are roots of x² − (a + b)x + ab = 0  ⇒  x² − 20x + 64 = 0  ⇒  (x − 16)(x − 4) = 0. So the numbers are 16 and 4."
-  },
-
-  // SECTION D: Questions 31 to 40
-  {
-    q: "Find the distance between the points P(1, −3, 4) and Q(−4, 1, 2) in 3D space.",
-    o: ["3√5", "5√3", "√41", "9"],
-    a: 0,
-    e: "Distance formula d = √[(x₂ − x₁)² + (y₂ − y₁)² + (z₂ − z₁)²] = √[(−4 − 1)² + (1 − (−3))² + (2 − 4)²] = √[(−5)² + (4)² + (−2)²] = √[25 + 16 + 4] = √45 = 3√5."
-  },
-  {
-    q: "In which octant does the point (−3, 1, −2) lie?",
-    o: ["Octant VI", "Octant II", "Octant III", "Octant V"],
-    a: 0,
-    e: "Signs of coordinates: x < 0 (−), y > 0 (+), z < 0 (−). In standard 3D cartesian system, (−, +, +) is Octant II and (−, +, −) is Octant VI."
-  },
-  {
-    q: "Find the ratio in which the YZ-plane divides the line segment joining points (2, 4, 5) and (3, 5, −4).",
-    o: ["2:3 externally", "2:3 internally", "3:2 externally", "1:2 internally"],
-    a: 0,
-    e: "Any point on the YZ-plane has x-coordinate = 0. Let the ratio be k : 1. Using section formula for x-coordinate: (k(3) + 1(2)) / (k + 1) = 0  ⇒  3k + 2 = 0  ⇒  k = −2/3. Negative sign denotes external division in ratio 2:3."
-  },
-  {
-    q: "Evaluate the limit: lim_{x → 0} [sin(5x) / (3x)].",
-    o: ["5/3", "3/5", "1", "0"],
-    a: 0,
-    e: "Rewrite limit as: lim_{x → 0} [(5/3) × (sin(5x) / 5x)]. Since lim_{θ → 0} (sin θ / θ) = 1, we get (5/3) × 1 = 5/3."
-  },
-  {
-    q: "Evaluate the limit: lim_{x → 2} [(x⁵ − 32) / (x³ − 8)].",
-    o: ["20/3", "10/3", "5/3", "8"],
-    a: 0,
-    e: "Using standard limit identity lim_{x → a} [(xⁿ − aⁿ)/(xᵐ − aᵐ)] = (n/m) aⁿ⁻ᵐ. Here n = 5, m = 3, a = 2. Limit = (5/3) × (2)⁵⁻³ = (5/3) × 2² = 20/3."
-  },
-  {
-    q: "Evaluate the limit: lim_{x → 0} [(1 − cos x) / x²].",
-    o: ["1/2", "0", "1", "2"],
-    a: 0,
-    e: "Use trigonometric identity 1 − cos x = 2 sin²(x/2). Limit = lim_{x → 0} [2 sin²(x/2) / x²] = 2 × lim_{x → 0} [(sin(x/2) / (x/2))² × (1/4)] = 2 × 1² × (1/4) = 1/2."
-  },
-  {
-    q: "Find the derivative of f(x) = x³ sin x with respect to x.",
-    o: ["3x² sin x + x³ cos x", "3x² cos x", "3x² sin x − x³ cos x", "x³ cos x"],
-    a: 0,
-    e: "Using the product rule d/dx [u · v] = u' v + u v': d/dx [x³ sin x] = (d/dx [x³]) sin x + x³ (d/dx [sin x]) = 3x² sin x + x³ cos x."
-  },
-  {
-    q: "Find the derivative of f(x) = (x + cos x) / tan x at x = π/2.",
-    o: ["−π/2", "π/2", "1 − π/2", "0"],
-    a: 0,
-    e: "Rewrite f(x) = (x + cos x) cot x. Using product rule: f'(x) = (1 − sin x) cot x + (x + cos x)(−csc² x). At x = π/2: sin(π/2) = 1, cot(π/2) = 0, csc(π/2) = 1, cos(π/2) = 0. f'(π/2) = (1 − 1)(0) + (π/2 + 0)(−1²) = −π/2."
-  },
-  {
-    q: "The derivative of sec x with respect to x is:",
-    o: ["sec x tan x", "sec² x", "−sec x tan x", "csc x cot x"],
-    a: 0,
-    e: "Standard calculus derivative rule: d/dx (sec x) = sec x tan x."
-  },
-  {
-    q: "Evaluate the limit: lim_{x → 0} [(e³ˣ − 1) / x].",
-    o: ["3", "1", "0", "e³"],
-    a: 0,
-    e: "Using the standard exponential limit lim_{y → 0} [(eʸ − 1) / y] = 1. Multiply numerator and denominator by 3: lim_{x → 0} 3 × [(e³ˣ − 1) / 3x] = 3 × 1 = 3."
-  },
-
-  // SECTION E: Questions 41 to 50
-  {
-    q: "Convert 7π/6 radians into sexagesimal degree measure.",
-    o: ["210°", "240°", "150°", "300°"],
-    a: 0,
-    e: "To convert radians to degrees, multiply by (180° / π): Degree measure = (7π/6) × (180°/π) = 7 × 30° = 210°."
-  },
-  {
-    q: "Find the exact value of cos 75°.",
-    o: ["(√3 − 1)/(2√2)", "(√3 + 1)/(2√2)", "(1 − √3)/(2√2)", "1/(2√2)"],
-    a: 0,
-    e: "Express cos 75° = cos(45° + 30°). Using expansion cos(A + B) = cos A cos B − sin A sin B: cos 75° = cos 45° cos 30° − sin 45° sin 30° = (1/√2)(√3/2) − (1/√2)(1/2) = (√3 − 1)/(2√2)."
-  },
-  {
-    q: "If tan x = −5/12 and x lies in the 2nd quadrant, find the value of sin x.",
-    o: ["5/13", "−5/13", "12/13", "−12/13"],
-    a: 0,
-    e: "In the 2nd quadrant, sine function is positive. Hypotenuse = √(5² + 12²) = √169 = 13. Therefore, sin x = + (Opposite / Hypotenuse) = 5/13."
-  },
-  {
-    q: "Simplify the trigonometric expression: cos 2x / (cos x + sin x).",
-    o: ["cos x − sin x", "cos x + sin x", "tan x", "1"],
-    a: 0,
-    e: "Using double angle identity cos 2x = cos² x − sin² x = (cos x − sin x)(cos x + sin x). Dividing by (cos x + sin x) yields cos x − sin x."
-  },
-  {
-    q: "The variance of the first n natural numbers is given by:",
-    o: ["(n² − 1) / 12", "(n² + 1) / 12", "n² / 12", "(n − 1)² / 12"],
-    a: 0,
-    e: "The variance of first n natural numbers is Var(X) = E[X²] − (E[X])² = [(n+1)(2n+1)/6] − [(n+1)/2]² = (n² − 1) / 12."
-  },
-  {
-    q: "If the mean of 5 observations x, x+2, x+4, x+6, x+8 is 11, find the mean of the first 3 observations.",
-    o: ["9", "8", "10", "11"],
-    a: 0,
-    e: "Mean of 5 observations = (5x + 20) / 5 = x + 4 = 11  ⇒  x = 7. The first 3 observations are 7, 9, 11. Their mean = (7 + 9 + 11)/3 = 27/3 = 9."
-  },
-  {
-    q: "The standard deviation of 10 observations is 4. If each observation is multiplied by 3, what is the new standard deviation?",
-    o: ["12", "36", "4", "16"],
-    a: 0,
-    e: "When each observation in a dataset is multiplied by a constant k, the new standard deviation becomes |k| times the original standard deviation. New SD = 3 × 4 = 12."
-  },
-  {
-    q: "A card is drawn at random from a pack of 52 cards. What is the probability that it is a face card or a red card?",
-    o: ["8/13", "9/13", "7/13", "1/2"],
-    a: 0,
-    e: "Total cards = 52. Red cards = 26. Face cards = 12 (6 red, 6 black). P(Red ∪ Face) = P(Red) + P(Face) − P(Red ∩ Face) = 26/52 + 12/52 − 6/52 = 32/52 = 8/13."
-  },
-  {
-    q: "Two fair dice are thrown simultaneously. What is the probability of getting a total sum of 8?",
-    o: ["5/36", "1/6", "7/36", "1/9"],
-    a: 0,
-    e: "Total sample space size = 6 × 6 = 36. Favourable outcomes giving a sum of 8: (2,6), (3,5), (4,4), (5,3), (6,2) = 5 outcomes. Probability = 5/36."
-  },
-  {
-    q: "If P(A) = 3/5 and P(B) = 1/5, find P(A ∪ B) given that A and B are mutually exclusive events.",
-    o: ["4/5", "3/25", "2/5", "1/5"],
-    a: 0,
-    e: "For mutually exclusive events, A ∩ B = ∅, so P(A ∩ B) = 0. Addition theorem gives P(A ∪ B) = P(A) + P(B) = 3/5 + 1/5 = 4/5."
-  }
-];
-
-const containers = ['questionsA', 'questionsB', 'questionsC', 'questionsD', 'questionsE'];
-questions.forEach((item, i) => {
-  const div = document.createElement('div');
-  div.className = 'question';
-  div.id = 'q' + (i + 1);
-  div.innerHTML = `
-    <div class="question-text">Q${i + 1}. ${item.q}</div>
-    <div class="options">
-      ${item.o.map((x, j) => `
-        <label class="option">
-          <input type="radio" name="q${i}" value="${j}">
-          <span><strong>${String.fromCharCode(65 + j)})</strong> ${x}</span>
-        </label>
-      `).join('')}
-    </div>
-  `;
-  document.getElementById(containers[Math.floor(i / 10)]).appendChild(div);
-});
-
+const questions = [{"q": "If A = {1, 2, 3} and B = {2, 3, 4}, then A ∩ B is", "o": ["{1, 4}", "{2, 3}", "{1, 2, 3, 4}", "∅"], "a": 1}, {"q": "If n(A) = 5, the number of subsets of A is", "o": ["5", "10", "25", "32"], "a": 3}, {"q": "The domain of f(x) = 1/(x − 3) is", "o": ["All real numbers", "All real numbers except 0", "All real numbers except 3", "x > 3"], "a": 2}, {"q": "If f(x) = 2x + 1, then f(3) equals", "o": ["5", "6", "7", "8"], "a": 2}, {"q": "The interval (−2, 5] represents", "o": ["−2 ≤ x < 5", "−2 < x ≤ 5", "−2 ≤ x ≤ 5", "−2 < x < 5"], "a": 1}, {"q": "The value of sin 30° is", "o": ["0", "1/2", "√3/2", "1"], "a": 1}, {"q": "The value of cos 60° is", "o": ["0", "1/2", "√3/2", "1"], "a": 1}, {"q": "If tan θ = 1 and θ is acute, then θ is", "o": ["30°", "45°", "60°", "90°"], "a": 1}, {"q": "The identity 1 − cos²x equals", "o": ["sin x", "sin²x", "tan²x", "1 + sin²x"], "a": 1}, {"q": "The period of sin x is", "o": ["π/2", "π", "2π", "4π"], "a": 2}, {"q": "The conjugate of 3 + 4i is", "o": ["−3 + 4i", "3 − 4i", "−3 − 4i", "4 + 3i"], "a": 1}, {"q": "The value of i² is", "o": ["1", "−1", "i", "−i"], "a": 1}, {"q": "The roots of x² + 1 = 0 are", "o": ["±1", "±i", "0 and 1", "No roots in complex numbers"], "a": 1}, {"q": "The modulus of 3 − 4i is", "o": ["1", "5", "7", "25"], "a": 1}, {"q": "The solution of 2x + 3 < 9 is", "o": ["x < 3", "x > 3", "x < 6", "x > 6"], "a": 0}, {"q": "The solution set of x ≥ −1 on the real line is", "o": ["(−∞, −1)", "(−∞, −1]", "[−1, ∞)", "(−1, ∞)"], "a": 2}, {"q": "The number of permutations of 4 distinct objects is", "o": ["4", "8", "16", "24"], "a": 3}, {"q": "The value of 5! is", "o": ["20", "60", "100", "120"], "a": 3}, {"q": "The value of ⁵C₂ is", "o": ["5", "10", "15", "20"], "a": 1}, {"q": "The coefficient of x² in (1 + x)⁴ is", "o": ["4", "6", "8", "12"], "a": 1}, {"q": "The 10th term of the AP 2, 5, 8, … is", "o": ["26", "27", "29", "30"], "a": 2}, {"q": "The sum of the first n natural numbers is", "o": ["n²", "n(n + 1)/2", "n(n − 1)/2", "2n + 1"], "a": 1}, {"q": "The common ratio of 3, 6, 12, 24, … is", "o": ["2", "3", "4", "6"], "a": 0}, {"q": "The sum to infinity of a GP with a = 4 and r = 1/2 is", "o": ["4", "6", "8", "10"], "a": 2}, {"q": "The slope of the line through (1, 2) and (3, 6) is", "o": ["1", "2", "3", "4"], "a": 1}, {"q": "The equation of the x-axis is", "o": ["x = 0", "y = 0", "x = y", "x + y = 0"], "a": 1}, {"q": "The distance between (0, 0) and (3, 4) is", "o": ["3", "4", "5", "7"], "a": 2}, {"q": "The midpoint of (2, 4) and (6, 8) is", "o": ["(4, 6)", "(8, 12)", "(2, 2)", "(3, 4)"], "a": 0}, {"q": "The centre of the circle x² + y² = 16 is", "o": ["(4, 0)", "(0, 4)", "(0, 0)", "(16, 0)"], "a": 2}, {"q": "The radius of x² + y² = 25 is", "o": ["5", "10", "25", "√5"], "a": 0}, {"q": "The focus of a parabola is a", "o": ["Fixed point", "Fixed line", "Variable point", "Chord"], "a": 0}, {"q": "The eccentricity of a circle is", "o": ["0", "1", "Between 0 and 1", "Greater than 1"], "a": 0}, {"q": "The limit lim(x→2) (x + 3) is", "o": ["2", "3", "5", "6"], "a": 2}, {"q": "The derivative of x² with respect to x is", "o": ["x", "2x", "x²", "2"], "a": 1}, {"q": "The derivative of a constant is", "o": ["1", "The constant", "0", "Undefined"], "a": 2}, {"q": "The derivative of sin x is", "o": ["−sin x", "cos x", "−cos x", "tan x"], "a": 1}, {"q": "The mean of 2, 4, 6, 8 is", "o": ["4", "5", "6", "20"], "a": 1}, {"q": "The median of 1, 3, 5, 7, 9 is", "o": ["3", "5", "7", "9"], "a": 1}, {"q": "The probability of getting a head on a fair coin is", "o": ["0", "1/4", "1/2", "1"], "a": 2}, {"q": "The probability of an impossible event is", "o": ["0", "1/2", "1", "−1"], "a": 0}, {"q": "The number of outcomes when two fair coins are tossed is", "o": ["2", "3", "4", "6"], "a": 2}, {"q": "The slope of a line making angle θ with the positive x-axis is", "o": ["cos θ", "sin θ", "tan θ", "cot θ"], "a": 2}, {"q": "The equation y = 3x + 2 has slope", "o": ["2", "3", "−2", "−3"], "a": 1}, {"q": "If a line has slope 0, it is", "o": ["Vertical", "Horizontal", "At 45°", "Undefined"], "a": 1}, {"q": "The sum of the roots of ax² + bx + c = 0 is", "o": ["c/a", "−b/a", "b/a", "−c/a"], "a": 1}, {"q": "The discriminant of ax² + bx + c = 0 is", "o": ["b² + 4ac", "b² − 4ac", "a² − 4bc", "2b − 4ac"], "a": 1}, {"q": "If the discriminant is zero, the quadratic has", "o": ["Two distinct real roots", "No real roots", "Equal real roots", "Three roots"], "a": 2}, {"q": "The value of (a + b)² is", "o": ["a² + b²", "a² − 2ab + b²", "a² + 2ab + b²", "2a² + 2b²"], "a": 2}, {"q": "The value of log₁₀ 100 is", "o": ["1", "2", "10", "100"], "a": 1}, {"q": "If 2ˣ = 16, then x equals", "o": ["2", "3", "4", "8"], "a": 2}];
+const sections = [{"title": "Section A — Sets, Functions & Trigonometry", "start": 0, "end": 10}, {"title": "Section B — Complex Numbers, Inequalities & Counting", "start": 10, "end": 20}, {"title": "Section C — Sequences, Series & Coordinate Geometry", "start": 20, "end": 30}, {"title": "Section D — Conic Sections, Limits, Derivatives & Statistics", "start": 30, "end": 40}, {"title": "Section E — Probability, Straight Lines, Quadratics & Logarithms", "start": 40, "end": 50}];
+const labels = ['A','B','C','D'];
+const STORAGE_KEY = 'class11Mathematics50MCQProgress_v1';
+const containers = [];
 const form = document.getElementById('examForm');
 const examLayout = document.getElementById('examLayout');
 const startBtn = document.getElementById('startBtn');
+const startHint = document.getElementById('startHint');
 const saveBtn = document.getElementById('saveBtn');
 const timer = document.getElementById('timer');
-
-let stopwatchSeconds = 0;
-let stopwatchStarted = false;
-let stopwatchClock = null;
-let stopwatchLastTick = 0;
+let elapsedSeconds = 0;
+let timerInterval = null;
+let lastTick = 0;
 let examStarted = false;
 let examPaused = true;
+let submitted = false;
 
-const formatTime = (t) => {
-  t = Math.max(0, Math.floor(t));
-  const h = String(Math.floor(t / 3600)).padStart(2, '0');
-  const m = String(Math.floor((t % 3600) / 60)).padStart(2, '0');
-  const s = String(t % 60).padStart(2, '0');
-  return `${h}:${m}:${s}`;
-};
-
-const renderStopwatch = () => {
-  timer.textContent = formatTime(stopwatchSeconds);
-  if (stopwatchSeconds > 7200) { // After 2 hours
-    timer.className = 'timer danger';
-  } else if (stopwatchSeconds > 3600) { // After 1 hour
-    timer.className = 'timer warning';
-  } else {
-    timer.className = 'timer';
-  }
-};
-
-function startStopwatch() {
-  if (stopwatchClock) return;
-  stopwatchStarted = true;
-  stopwatchLastTick = Date.now();
-  stopwatchClock = setInterval(() => {
-    let now = Date.now();
-    let d = Math.floor((now - stopwatchLastTick) / 1000);
-    if (d) {
-      stopwatchSeconds += d;
-      stopwatchLastTick += d * 1000;
-      renderStopwatch();
+function buildExam(){
+  sections.forEach((section, sIndex) => {
+    const sectionEl = document.createElement('section');
+    sectionEl.className = 'section'; sectionEl.id = 'sec' + String.fromCharCode(65+sIndex);
+    const heading = document.createElement('h2'); heading.textContent = section.title;
+    sectionEl.appendChild(heading);
+    for(let i=section.start; i<section.end; i++){
+      const item = questions[i];
+      const qEl = document.createElement('div'); qEl.className='question'; qEl.id='q'+(i+1);
+      const qText = document.createElement('div'); qText.className='question-text';
+      const num = document.createElement('span'); num.className='q-number'; num.textContent='Q'+(i+1);
+      qText.appendChild(num); qText.appendChild(document.createTextNode(item.q)); qEl.appendChild(qText);
+      const opts = document.createElement('div'); opts.className='options';
+      item.o.forEach((option, j)=>{
+        const label = document.createElement('label'); label.className='option';
+        const radio = document.createElement('input'); radio.type='radio'; radio.name='q'+i; radio.value=String(j); radio.setAttribute('aria-label',`Question ${i+1}, option ${labels[j]}`);
+        const letter = document.createElement('span'); letter.className='option-label'; letter.textContent=labels[j]+')';
+        const text = document.createElement('span'); text.textContent=option;
+        label.appendChild(radio); label.appendChild(letter); label.appendChild(text); opts.appendChild(label);
+      });
+      qEl.appendChild(opts); sectionEl.appendChild(qEl);
     }
-  }, 250);
-}
-
-function stopStopwatch() {
-  if (stopwatchClock) {
-    let now = Date.now();
-    let d = Math.floor((now - stopwatchLastTick) / 1000);
-    if (d) stopwatchSeconds += d;
-    clearInterval(stopwatchClock);
-    stopwatchClock = null;
-  }
-  stopwatchStarted = false;
-  renderStopwatch();
-}
-
-function updateProgress() {
-  let n = 0;
-  questions.forEach((_, i) => {
-    if (document.querySelector(`input[name=q${i}]:checked`)) n++;
-  });
-  document.getElementById('progressText').textContent = `${n} / 50 answered`;
-  document.getElementById('progressBar').style.width = (n / 50 * 100) + '%';
-}
-form.addEventListener('change', updateProgress);
-
-function goTo(id) {
-  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-}
-
-function getCurrentAnswers() {
-  return questions.map((_, i) => {
-    const x = document.querySelector(`input[name=q${i}]:checked`);
-    return x ? Number(x.value) : null;
+    form.appendChild(sectionEl);
+    const nav = document.createElement('button'); nav.type='button'; nav.className='section-link'+(sIndex===0?' active':''); nav.textContent=`${String.fromCharCode(65+sIndex)} · Questions ${section.start+1}–${section.end}`; nav.dataset.target=sectionEl.id;
+    nav.addEventListener('click',()=>goTo(sectionEl.id)); document.getElementById('sectionNav').appendChild(nav);
   });
 }
-
-function showExam() {
-  examLayout.classList.remove('exam-hidden');
-  examPaused = false;
-  startBtn.textContent = 'Started';
-  startBtn.disabled = true;
-  saveBtn.textContent = 'Save Progress';
-  startStopwatch();
+function formatTime(value){
+  const t=Math.max(0,Math.floor(value));
+  return [Math.floor(t/3600),Math.floor((t%3600)/60),t%60].map(n=>String(n).padStart(2,'0')).join(':');
 }
-
-function hideExam() {
-  examLayout.classList.add('exam-hidden');
-  examPaused = true;
+function renderTimer(){
+  timer.textContent=formatTime(elapsedSeconds);
+  timer.className='timer'+(elapsedSeconds>=5400?' danger':elapsedSeconds>=3600?' warning':'');
 }
-
-function showModal(title, message, confirmCallback = null) {
-  const modal = document.getElementById('customModal');
-  document.getElementById('modalTitle').textContent = title;
-  document.getElementById('modalMessage').textContent = message;
-  const btns = document.getElementById('modalBtns');
-  btns.innerHTML = '';
-
-  if (confirmCallback) {
-    const cancelBtn = document.createElement('button');
-    cancelBtn.className = 'btn-cancel';
-    cancelBtn.textContent = 'Cancel';
-    cancelBtn.onclick = () => modal.classList.remove('active');
-
-    const confirmBtn = document.createElement('button');
-    confirmBtn.className = 'btn-confirm';
-    confirmBtn.textContent = 'Confirm Reset';
-    confirmBtn.onclick = () => {
-      modal.classList.remove('active');
-      confirmCallback();
-    };
-
-    btns.appendChild(cancelBtn);
-    btns.appendChild(confirmBtn);
-  } else {
-    const okBtn = document.createElement('button');
-    okBtn.className = 'btn-ok';
-    okBtn.textContent = 'OK';
-    okBtn.onclick = () => modal.classList.remove('active');
-    btns.appendChild(okBtn);
-  }
+function startTimer(){
+  if(timerInterval || submitted) return;
+  examPaused=false; lastTick=Date.now();
+  timerInterval=setInterval(()=>{
+    const now=Date.now(); const delta=Math.floor((now-lastTick)/1000);
+    if(delta>0){elapsedSeconds+=delta; lastTick+=delta*1000; renderTimer();}
+  },250);
+}
+function stopTimer(){
+  if(timerInterval){const now=Date.now(); elapsedSeconds+=Math.max(0,Math.floor((now-lastTick)/1000)); clearInterval(timerInterval); timerInterval=null;}
+  renderTimer();
+}
+function getAnswers(){return questions.map((_,i)=>{const checked=form.querySelector(`input[name="q${i}"]:checked`);return checked?Number(checked.value):null;});}
+function setAnswers(answers){
+  if(!Array.isArray(answers))return;
+  answers.forEach((v,i)=>{if(v===null||v===undefined)return;const input=form.querySelector(`input[name="q${i}"][value="${Number(v)}"]`);if(input)input.checked=true;});
+}
+function updateProgress(){
+  const count=getAnswers().filter(v=>v!==null).length; const percent=Math.round(count/questions.length*100);
+  document.getElementById('progressText').textContent=`${count} / ${questions.length} answered`;
+  document.getElementById('progressPct').textContent=percent+'%';
+  document.getElementById('progressBar').style.width=percent+'%';
+}
+function goTo(id){const target=document.getElementById(id);if(target)target.scrollIntoView({behavior:'smooth',block:'start'});document.querySelectorAll('.section-link').forEach(b=>b.classList.toggle('active',b.dataset.target===id));}
+form.addEventListener('change',updateProgress);
+function showExam(){
+  if(submitted)return;
+  examStarted=true;examPaused=false;examLayout.classList.remove('exam-hidden');
+  startBtn.textContent='Exam in Progress';startBtn.disabled=true;startHint.textContent='Your timer is running. Save progress to pause and hide the questions.';
+  saveBtn.textContent='Save Progress';startTimer();
+}
+function hideExam(){examLayout.classList.add('exam-hidden');examPaused=true;}
+function openModal(title,message,confirmCallback=null){
+  const modal=document.getElementById('customModal');document.getElementById('modalTitle').textContent=title;document.getElementById('modalMessage').textContent=message;
+  const btns=document.getElementById('modalBtns');btns.replaceChildren();
+  if(confirmCallback){const cancel=document.createElement('button');cancel.className='btn-cancel';cancel.type='button';cancel.textContent='Cancel';cancel.onclick=()=>modal.classList.remove('active');const confirm=document.createElement('button');confirm.className='btn-confirm';confirm.type='button';confirm.textContent='Confirm Reset';confirm.onclick=()=>{modal.classList.remove('active');confirmCallback();};btns.append(cancel,confirm);}
+  else{const ok=document.createElement('button');ok.className='btn-ok';ok.type='button';ok.textContent='OK';ok.onclick=()=>modal.classList.remove('active');btns.appendChild(ok);}
   modal.classList.add('active');
 }
-
-function saveProgress(silent = false) {
-  localStorage.setItem('class11Math50Progress', JSON.stringify({
-    answers: getCurrentAnswers(),
-    stopwatchSeconds,
-    examStarted,
-    examPaused: true,
-    savedAt: Date.now()
-  }));
-  stopStopwatch();
-  hideExam();
-  saveBtn.textContent = 'Resume';
-  startBtn.textContent = 'Resume';
-  startBtn.disabled = false;
-  if (!silent) {
-    showModal('Progress Saved', 'Your exam progress and timer have been saved. Click "Resume" whenever you are ready to continue.');
-  }
+function saveProgress(showMessage=true){
+  const payload={answers:getAnswers(),elapsedSeconds,examStarted:true,submitted:false,savedAt:Date.now()};
+  try{localStorage.setItem(STORAGE_KEY,JSON.stringify(payload));}catch(e){openModal('Could not save','Your browser may block local storage. Your answers will remain here until this page is closed.');}
+  stopTimer();hideExam();submitted=false;startBtn.disabled=false;startBtn.textContent='Resume Examination';startHint.textContent='Progress saved. Your questions are hidden and the timer is paused.';saveBtn.textContent='Resume';
+  if(showMessage)openModal('Progress Saved','Your answers and elapsed time have been saved in this browser. Select Resume Examination to continue.');
 }
-
-saveBtn.onclick = () => { if (examStarted) saveProgress(false); };
-startBtn.onclick = () => { examStarted = true; showExam(); };
-
-function restore() {
-  try {
-    let x = JSON.parse(localStorage.getItem('class11Math50Progress'));
-    if (x && Array.isArray(x.answers)) {
-      x.answers.forEach((v, i) => {
-        if (v !== null) {
-          let r = document.querySelector(`input[name=q${i}][value="${v}"]`);
-          if (r) r.checked = true;
-        }
-      });
-      stopwatchSeconds = Number(x.stopwatchSeconds) || 0;
-      examStarted = !!x.examStarted;
-      if (examStarted) {
-        hideExam();
-        startBtn.textContent = 'Resume';
-        saveBtn.textContent = 'Resume';
-      } else {
-        hideExam();
-      }
-      renderStopwatch();
-      updateProgress();
-      return;
-    }
-  } catch (e) {}
-  hideExam();
-  renderStopwatch();
+saveBtn.addEventListener('click',()=>{if(submitted)return;if(examStarted && !examPaused)saveProgress(true);else showExam();});
+startBtn.addEventListener('click',()=>{if(!examStarted)examStarted=true;showExam();});
+function submitExam(){
+  if(!examStarted){openModal('Start first','Select Start Examination before submitting your answers.');return;}
+  stopTimer();submitted=true;examPaused=true;
+  form.querySelectorAll('input[type=radio]').forEach(input=>input.disabled=true);
+  const answers=getAnswers();let correct=0,answered=0;
+  answers.forEach((a,i)=>{if(a!==null){answered++;if(a===questions[i].a)correct++;}});
+  const incorrect=answered-correct,skipped=questions.length-answered;
+  document.getElementById('scoreText').textContent=`${correct} / ${questions.length}`;
+  document.getElementById('scorePills').innerHTML=`<span class="score-pill">Correct: ${correct}</span><span class="score-pill">Incorrect: ${incorrect}</span><span class="score-pill">Skipped: ${skipped}</span>`;
+  document.getElementById('resultDetails').textContent=`You answered ${answered} of ${questions.length} questions. Your score is ${Math.round(correct/questions.length*100)}%.`;
+  document.getElementById('totalTime').textContent='Time taken: '+formatTime(elapsedSeconds);
+  document.getElementById('result').style.display='block';document.getElementById('reviewSection').style.display='none';
+  startBtn.disabled=true;startBtn.textContent='Submitted';startHint.textContent='Examination submitted. Review your answers below.';saveBtn.disabled=true;
+  try{localStorage.setItem(STORAGE_KEY,JSON.stringify({answers,elapsedSeconds,examStarted:true,submitted:true,savedAt:Date.now()}));}catch(e){}
+  document.getElementById('result').scrollIntoView({behavior:'smooth',block:'center'});
 }
-
-document.getElementById('submitBtn').onclick = () => {
-  let score = 0, answered = 0;
-  questions.forEach((item, i) => {
-    const x = document.querySelector(`input[name=q${i}]:checked`);
-    if (x) {
-      answered++;
-      if (Number(x.value) === item.a) score++;
-    }
+document.getElementById('submitBtn').addEventListener('click',()=>{
+  const unanswered=questions.length-getAnswers().filter(a=>a!==null).length;
+  if(unanswered>0){openModal('Submit examination?',`You still have ${unanswered} unanswered question(s). They will be counted as skipped. Submit your answers now?`,submitExam);}
+  else{openModal('Submit examination?','You have answered all 50 questions. Submit your answers now?',submitExam);}
+});
+document.getElementById('reviewBtn').addEventListener('click',()=>{
+  const content=document.getElementById('reviewContent');content.replaceChildren();const answers=getAnswers();let count=0;
+  questions.forEach((item,i)=>{
+    const selected=answers[i];if(selected===item.a)return;count++;
+    const card=document.createElement('div');card.className='review-card '+(selected===null?'skipped':'incorrect');
+    const heading=document.createElement('h4');heading.textContent=`Question ${i+1} — ${selected===null?'Skipped':'Incorrect'}`;
+    const question=document.createElement('p');question.textContent='Question: '+item.q;
+    const your=document.createElement('p');your.textContent='Your answer: '+(selected===null?'No answer selected':`${labels[selected]}) ${item.o[selected]}`);
+    const correct=document.createElement('p');correct.className='answer-correct';correct.textContent=`Correct answer: ${labels[item.a]}) ${item.o[item.a]}`;
+    card.append(heading,question,your,correct);content.appendChild(card);
   });
-  stopStopwatch();
-  document.getElementById('scoreText').textContent = `${score} / 50`;
-  document.getElementById('resultDetails').textContent = `You answered ${answered} of 50 questions. Correct: ${score}. Incorrect: ${answered - score}. Skipped: ${50 - answered}.`;
-  document.getElementById('totalTime').textContent = `Total Time Taken: ${formatTime(stopwatchSeconds)}`;
-  document.getElementById('result').style.display = 'block';
-  document.getElementById('reviewSection').style.display = 'none';
-  document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
-  
-  localStorage.setItem('class11Math50Answers', JSON.stringify(questions.map((_, i) => {
-    const x = document.querySelector(`input[name=q${i}]:checked`);
-    return x ? Number(x.value) : null;
-  })));
-};
-
-document.getElementById('reviewBtn').onclick = () => {
-  const box = document.getElementById('reviewContent');
-  box.innerHTML = '';
-  let count = 0;
-  questions.forEach((item, i) => {
-    const x = document.querySelector(`input[name=q${i}]:checked`);
-    const selected = x ? Number(x.value) : null;
-    if (selected === item.a) return;
-    
-    count++;
-    const card = document.createElement('div');
-    card.className = 'review-card ' + (selected === null ? 'skipped' : 'incorrect');
-    const status = selected === null ? 'Skipped' : 'Incorrect';
-    const selectedText = selected === null ? 'No answer selected' : `${String.fromCharCode(65 + selected)}) ${item.o[selected]}`;
-    const correctText = `${String.fromCharCode(65 + item.a)}) ${item.o[item.a]}`;
-    
-    card.innerHTML = `
-      <h4>Q${i + 1} — ${status}</h4>
-      <p><strong>Question:</strong> ${item.q}</p>
-      <p><strong>Your answer:</strong> ${selectedText}</p>
-      <p><strong>Correct answer:</strong> ${correctText}</p>
-      <p><strong>Explanation:</strong> ${item.e}</p>
-    `;
-    box.appendChild(card);
-  });
-  
-  if (!count) {
-    box.innerHTML = '<div class="review-card correct"><h4>Outstanding Performance!</h4><p>All 50 answers are correct. You have scored 100% in Class 11 Mathematics!</p></div>';
-  }
-  document.getElementById('reviewSection').style.display = 'block';
-  document.getElementById('reviewSection').scrollIntoView({ behavior: 'smooth' });
-};
-
-document.getElementById('resetBtn').onclick = () => {
-  showModal(
-    'Reset Examination',
-    'Are you sure you want to reset all 50 answers and restart the examination? All recorded progress will be cleared.',
-    () => {
-      form.reset();
-      localStorage.removeItem('class11Math50Progress');
-      localStorage.removeItem('class11Math50Answers');
-      stopStopwatch();
-      stopwatchSeconds = 0;
-      examStarted = false;
-      hideExam();
-      startBtn.textContent = 'Start';
-      saveBtn.textContent = 'Save Progress';
-      startBtn.disabled = false;
-      renderStopwatch();
-      document.getElementById('result').style.display = 'none';
-      document.getElementById('reviewSection').style.display = 'none';
-      updateProgress();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+  if(count===0){const card=document.createElement('div');card.className='review-card correct';const h=document.createElement('h4');h.textContent='Excellent work!';const p=document.createElement('p');p.textContent='All 50 answers are correct. You scored 100%.';card.append(h,p);content.appendChild(card);}
+  document.getElementById('reviewSection').style.display='block';document.getElementById('reviewSection').scrollIntoView({behavior:'smooth',block:'start'});
+});
+document.getElementById('resetBtn').addEventListener('click',()=>openModal('Reset examination?','This will clear all selected answers, saved progress, results and the timer.',()=>{
+  stopTimer();form.reset();form.querySelectorAll('input[type=radio]').forEach(input=>input.disabled=false);elapsedSeconds=0;examStarted=false;examPaused=true;submitted=false;hideExam();renderTimer();updateProgress();
+  document.getElementById('result').style.display='none';document.getElementById('reviewSection').style.display='none';document.getElementById('savedBanner').style.display='none';
+  startBtn.disabled=false;startBtn.textContent='Start Examination';startHint.textContent='Your questions and timer will begin when you start.';saveBtn.disabled=false;saveBtn.textContent='Save Progress';
+  try{localStorage.removeItem(STORAGE_KEY);}catch(e){}window.scrollTo({top:0,behavior:'smooth'});
+}));
+function restore(){
+  try{
+    const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return;
+    const state=JSON.parse(raw);if(!state||!Array.isArray(state.answers))return;
+    setAnswers(state.answers);elapsedSeconds=Number(state.elapsedSeconds)||0;examStarted=!!state.examStarted;submitted=!!state.submitted;renderTimer();updateProgress();
+    if(submitted){
+      // Allow an already-submitted attempt to be opened and reviewed without restarting the timer.
+      form.querySelectorAll('input[type=radio]').forEach(input=>input.disabled=true);
+      examLayout.classList.remove('exam-hidden');startBtn.disabled=true;startBtn.textContent='Submitted';startHint.textContent='Your previous submitted attempt was restored.';saveBtn.disabled=true;
+      stopTimer();showResultWithoutResubmitting();
+    }else{
+      hideExam();startBtn.textContent=examStarted?'Resume Examination':'Start Examination';saveBtn.textContent=examStarted?'Resume':'Save Progress';startHint.textContent=examStarted?'Saved progress found. Resume to continue.':'Your questions and timer will begin when you start.';
+      if(examStarted)document.getElementById('savedBanner').style.display='block';
     }
-  );
-};
-
-// Initial setup on window load
-renderStopwatch();
-restore();
+  }catch(e){hideExam();renderTimer();}
+}
+function showResultWithoutResubmitting(){
+  const answers=getAnswers();let correct=0,answered=0;answers.forEach((a,i)=>{if(a!==null){answered++;if(a===questions[i].a)correct++;}});
+  document.getElementById('scoreText').textContent=`${correct} / ${questions.length}`;
+  document.getElementById('scorePills').innerHTML=`<span class="score-pill">Correct: ${correct}</span><span class="score-pill">Incorrect: ${answered-correct}</span><span class="score-pill">Skipped: ${questions.length-answered}</span>`;
+  document.getElementById('resultDetails').textContent=`You answered ${answered} of ${questions.length} questions. Your score is ${Math.round(correct/questions.length*100)}%.`;
+  document.getElementById('totalTime').textContent='Time taken: '+formatTime(elapsedSeconds);document.getElementById('result').style.display='block';
+}
+buildExam();renderTimer();updateProgress();restore();
 </script>
 </body>
 </html>
